@@ -1,13 +1,14 @@
-
+from collections import OrderedDict
 
 from django.test import RequestFactory, TestCase
 from django.urls import reverse
 from rest_framework import routers
 from rest_framework.test import force_authenticate
-from api.models import User, Author, Article
-from api.views import CreateUserView, ArticleViewSet
-from rest_framework.utils.serializer_helpers import ReturnList, ReturnDict
-from collections import OrderedDict
+from rest_framework.utils.serializer_helpers import ReturnDict, ReturnList
+
+from api.models import Article, Author, User
+from api.views import ArticleViewSet, CreateUserView
+
 
 class ArticlesViewTest(TestCase):
     """ Test Articles TestCase  """

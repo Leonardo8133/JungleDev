@@ -1,6 +1,8 @@
 from rest_framework import serializers
-from api.models import Article, Author, User
 from rest_framework.authtoken.models import Token
+
+from api.models import Article, Author, User
+
 
 class CreateUserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -15,7 +17,7 @@ class CreateUserSerializer(serializers.ModelSerializer):
         user.set_password(password)
         user.save()
 
-        ## Creates user token
+        ## Create user token
         token = Token.objects.create(user = user)
         return user
 
@@ -26,7 +28,6 @@ class AuthorSerializer(serializers.ModelSerializer):
 
 
 class NotAuthenticatedArticleSerializer(serializers.ModelSerializer):
-
     author = AuthorSerializer()
     firstParagraph = serializers.CharField(source='get_first_paragraph')
 
@@ -36,9 +37,8 @@ class NotAuthenticatedArticleSerializer(serializers.ModelSerializer):
     
 
 class AuthenticatedArticleSerializer(NotAuthenticatedArticleSerializer):
-
     body = serializers.CharField(source='get_body')
 
     class Meta:
         model = Article
-        fields = fields = ['id', 'author', 'category', 'title', 'summary', 'firstParagraph', 'body']
+        fields = ['id', 'author', 'category', 'title', 'summary', 'firstParagraph', 'body']
