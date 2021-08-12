@@ -12,7 +12,6 @@ class CreateUserView(CreateAPIView):
 
 class ArticleViewSet(viewsets.ReadOnlyModelViewSet):
     """ List/Retrieve view. """
-    permission_classes = [IsAuthenticated]
     queryset = Article.objects.all()
     serializer_class = NotAuthenticatedArticleSerializer
     filterset_fields  = ["title", "category"]
