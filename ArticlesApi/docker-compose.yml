@@ -9,10 +9,8 @@ services:
       - POSTGRES_PASSWORD=postgres
   app:
     build: .
-    environment:
-      - DEBUG=True
     env_file: .env
-    command: sh -c "python manage.py migrate && gunicorn ArticlesApi.wsgi:application --bind 0.0.0.0:8000"
+    command: sh -c "python manage.py test && python manage.py migrate && gunicorn ArticlesApi.wsgi:application --bind 0.0.0.0:8000"
     volumes:
       - .:/app
     ports:

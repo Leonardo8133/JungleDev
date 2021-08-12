@@ -2,7 +2,6 @@ FROM python:3.7-alpine
 
 
 ENV PYTHONUNBUFFERED 1
-ENV DEBUG=0
 
 COPY ./requirements.txt /requirements.txt
 RUN apk update \
