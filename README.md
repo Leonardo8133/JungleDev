@@ -26,7 +26,7 @@ The title, category, summary, first paragraph and author are avaliable to public
 
 > Inside the terminal, run the command:
 
->  ` docker compose run app sh -c "python manage.py shell < ArticlesApi/utils/pre_populate_database.py" `
+>  ` docker compose run --rm app sh -c "python manage.py shell < ArticlesApi/utils/pre_populate_database.py" `
 
 > Once done, you can access the Django Admin with the (username: "admin", password: "admin") credentials.
 
