@@ -16,7 +16,16 @@ The title, category, summary, first paragraph and author are avaliable to public
 
 > Browse to the "/ArticlesApi" folder and run the command ` docker compose up `.
 
+
+
+> Access the API in the "http://127.0.0.1/" url while de container is running.
+
+
+### Notes.
+
 > The .env file is available in the repository to simplify the testing process. 
+
+> You can pre-populate the database (next Topic), avoiding manual data insertion.
 
 
 
