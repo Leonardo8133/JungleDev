@@ -1,4 +1,5 @@
-from api.models import User, Article, Author
+from api.models import Article, Author
+from user.models import User
 import random
 
 

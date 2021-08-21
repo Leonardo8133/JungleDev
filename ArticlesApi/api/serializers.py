@@ -12,7 +12,6 @@ class AuthorSerializer(serializers.ModelSerializer):
 class NotAuthenticatedArticleSerializer(serializers.ModelSerializer):
     author = AuthorSerializer()
     firstParagraph = serializers.CharField(source='get_first_paragraph')
-
     class Meta:
         model = Article
         fields = ['id', 'author', 'category', 'title', 'summary', 'firstParagraph']
