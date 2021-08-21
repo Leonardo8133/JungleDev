@@ -16,10 +16,10 @@ The title, category, summary, first paragraph and author are avaliable to public
 
 > Browse to the "/ArticlesApi" folder and run the command ` docker compose up ` for build/start the database and start the server .
 
-> Access the API in the "http://127.0.0.1/" url while de container is running.
+> Access the API in "http://127.0.0.1:8000/" url while the container is running.
 
 
-### Notes.
+### Notes for testing the API.
 
 > The .env file is available in the repository to simplify the testing process. 
 
