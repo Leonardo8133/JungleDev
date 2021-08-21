@@ -9,7 +9,6 @@ RUN apk update \
   && apk add postgresql-dev \
   && pip install psycopg2 \
   && apk del build-deps
-RUN pip install Django==3.0.7
 RUN pip install -r /requirements.txt
 
 
@@ -17,4 +16,8 @@ RUN mkdir /app
 WORKDIR /app
 ADD . /app/
 
+
+COPY ./docker-entrypoint.sh .
+RUN chmod a+x /app/docker-entrypoint.sh
+ENTRYPOINT ["sh", "/app/docker-entrypoint.sh"]
 

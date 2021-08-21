@@ -14,9 +14,7 @@ The title, category, summary, first paragraph and author are avaliable to public
 
 > Once Docker is running, clone the repository, open a terminal and browse to the repository folder.
 
-> Browse to the "/ArticlesApi" folder and run the command ` docker compose up `.
-
-
+> Browse to the "/ArticlesApi" folder and run the command ` docker compose up ` for build/start the database and start the server .
 
 > Access the API in the "http://127.0.0.1/" url while de container is running.
 
