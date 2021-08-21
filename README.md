@@ -10,14 +10,19 @@ The title, category, summary, first paragraph and author are avaliable to public
 
 ### Running the API
 
-> In order to run the API locally, you need [Docker](https://docs.docker.com) installed.
+#### Requirements
 
-> Once Docker is running, clone the repository, open a terminal and browse to the repository folder.
+• In order to run the API locally, you just need [Docker](https://docs.docker.com) installed.
 
-> Browse to the "/ArticlesApi" folder and run the command ` docker compose up ` for build/start the database and start the server .
+#### Starting the server
 
-> Access the API in "http://127.0.0.1:8000/" url while the container is running.
+> Once Docker is running, open a terminal and browse to the repository folder.
 
+> Browse to the "/ArticlesApi" folder and run the command: ` docker compose up ` for build/start the database and server .
+
+> If everything went fine, you should see This message: ` Your Server is Running `
+
+> Access the API in "http://127.0.0.1:8000/" url while the server is running.
 
 ### Notes for testing the API.
 
@@ -29,15 +34,15 @@ The title, category, summary, first paragraph and author are avaliable to public
 
 ### Pre populate the database
 
-> For Testing purpose, you can run a command for insert some data in your empty database.
+>  For Testing purpose, you can run a command for insert some data in your empty database.
 
-> Inside the terminal, run the command:
+>  While the servers are running, run the command in terminal:
 
->  ` docker compose run --rm app sh -c "python manage.py shell < ArticlesApi/utils/pre_populate_database.py" `
+>  ` docker compose exec app sh -c "python manage.py shell < ArticlesApi/utils/pre_populate_database.py"" `.
 
-> Once done, you can access the Django Admin with the (username: "admin", password: "admin") credentials.
+>  Once done, you can access the Django Admin with the (username: "admin", password: "admin") credentials.
 
-> Your database now have some articles and authors records.
+>  Your database now have some articles and authors records automatcally created.
 
 
 
