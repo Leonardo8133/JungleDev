@@ -38,10 +38,11 @@ INSTALLED_APPS = [
     'django_filters',
     'rest_framework',
     'rest_framework.authtoken',
-    'api'
+    'api',
+    'user'
 ]
 
-AUTH_USER_MODEL = "api.User"
+AUTH_USER_MODEL = "user.User"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

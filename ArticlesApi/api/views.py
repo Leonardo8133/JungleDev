@@ -1,18 +1,8 @@
-from django.shortcuts import render
 from rest_framework import viewsets
-from rest_framework.generics import CreateAPIView
-from rest_framework.permissions import IsAuthenticated
 
-from api.models import Article, User
+from api.models import Article
 from api.serializers import (AuthenticatedArticleSerializer,
-                             CreateUserSerializer,
                              NotAuthenticatedArticleSerializer)
-
-
-class CreateUserView(CreateAPIView):
-    """  Register Only Endpoint """
-    queryset = User.objects.all()
-    serializer_class = CreateUserSerializer
 
 
 class ArticleViewSet(viewsets.ReadOnlyModelViewSet):
