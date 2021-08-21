@@ -8,9 +8,11 @@ from user.models import User
 class CreateUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('id', 'password', 'username','email')
-        write_only_fields = ('password',)
+        fields = ('id', 'password', 'username', 'email')
         read_only_fields = ('id',)
+        extra_kwargs = {
+            'password': {'write_only': True}
+        }
 
     def create(self, validated_data):
         password = validated_data.pop('password')
